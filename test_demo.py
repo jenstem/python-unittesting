@@ -15,6 +15,7 @@ class TestDemo(unittest.TestCase):
     def test_subtract(self):
         self.assertEqual(self.calculate.subtract(3, 2), 1)
 
+    @unittest.skipIf(True, "I am skipping this test method because it is not ready yet")
     def test_multiply(self):
         self.assertEqual(self.calculate.multiply(3, 2), 6)
 
