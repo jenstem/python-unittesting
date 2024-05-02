@@ -7,7 +7,7 @@ class TestDemo(unittest.TestCase):
         self.calculate = demo.Calculate()
 
     def tearDown(self):
-        print("This is the tearDown method")
+        print("This is a tearDown method")
 
     def test_add(self):
         self.assertEqual(self.calculate.add(1, 2), 3)
@@ -20,6 +20,8 @@ class TestDemo(unittest.TestCase):
 
     def test_divide(self):
         self.assertEqual(self.calculate.divide(10, 2), 5)
+        with self.assertRaises(ValueError):
+            self.calculate.divide(10, 0)
 
 
 if __name__ == '__main__':
