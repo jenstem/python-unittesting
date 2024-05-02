@@ -1,4 +1,5 @@
-from app.demo import add, subtract, multiply
+import pytest
+from app.demo import add, subtract, multiply, divide
 
 
 def test_add():
@@ -9,3 +10,9 @@ def test_subtract():
 
 def test_multiply():
     assert multiply(10, 2) == 20
+
+def test_divide():
+    assert divide(10, 2) == 5
+
+    with pytest.raises(ValueError):
+        divide(10, 0)
