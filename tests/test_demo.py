@@ -1,2 +1,8 @@
 import pytest
-from app.demo import add_item, remove_item, get_item_count, get_total_items, get_cart_items, clear_cart
+from app.demo import ShoppingCart
+
+def test_add_item():
+    cart = ShoppingCart()
+    cart.add_item("apple", 2)
+    assert cart.get_item_count("apple") == 2
+    assert cart.get_total_items() == 2

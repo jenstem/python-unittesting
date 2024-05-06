@@ -1,9 +1,9 @@
 class ShoppingCart:
     def __init__(self):
-        self.items = []
+        self.items = {}
 
     def add_item(self, item, quantity):
-        for item in self.items:
+        if item in self.items:
             self.items[item] += quantity
         else:
             self.items[item] = quantity
@@ -21,7 +21,7 @@ class ShoppingCart:
             return 0
 
     def get_total_items(self):
-        return sum(self.items.values)
+        return sum(self.items.values())
 
     def get_cart_items(self):
         return list(self.items.keys())
